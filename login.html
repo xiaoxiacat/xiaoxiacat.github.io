@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录个人博客</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- 引入基础样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 引入轮播图样式 -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- 引入动画样式 -->
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <!-- 引入login样式 -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 头部区域start -->
+    <div class="header">
+        <div class="w">
+            <div class="fl">
+                <div class="title fl">
+                    海上月亮一只猫
+                </div>
+                <ul class="fl father">
+                    <li><a href="index.html" class="ico1">首页</a></li>
+                    <!-- <li><a href="message.html" class="ico2">留言</a></li> -->
+                    <li><a href="myslef.html" class="ico3">我的博客</a></li>
+                    <li><a href="information.html" class="ico4">关于我</a></li>
+                </ul>
+            </div>
+            <div class="fr">
+                <div class="search">
+                    <div class="logo">
+                        <a href="#"><img src="images/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="login">
+                    <a href="login.html">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 头部区域end -->
+
+    <!-- 登录区域start -->
+    <div id="login">
+        <div class="box">
+            <form action="">
+                <div class="login_title">登录个人博客</div>
+
+                <!-- 用户名 -->
+                <div class="user_name">
+                    <span>个人博客账号：</span>
+                    <input type="text" name="" id="uname" placeholder="请输入个人博客账号" onblur="checkId()">
+                    <div class="name-label" id="error_name"> </div>
+                </div>
+
+                <!-- 密码 -->
+                <div class="password">
+                    <span>口&nbsp;&nbsp;&nbsp;&nbsp;令：</span>
+                    <input type="password" name="" id="pwd" placeholder="请输入口令" onblur="checkPWD()">
+                    <div class="pwd-label" id="error_pwd"> </div>
+                </div>
+
+                <!-- 确定密码 -->
+                <div class="rpasswprd">
+                    <span>二次口令：</span>
+                    <input type="password" name="" id="rpwd" placeholder="请输入口令" onblur="checkRPWD()">
+                    <div class="rpwd-label" id="error_rpwd"> </div>
+                </div>
+
+                <!-- 按钮 -->
+                <div class="btn">
+                    <input type="button" value="登  录" class="btn1" onclick="login()">
+                    <input type="reset" value="重  置" class="btn2">
+                </div>
+            </form>
+
+            <!-- 引导注册 -->
+            <div class="reg">
+                未注册？<a href="#">点击注册</a>
+            </div>
+        </div>
+    </div>
+    <!-- 登录区域end -->
+
+    <!-- 尾部区域start -->
+    <footer>
+        <div class="mod_copyright">
+            <div class="copyright">
+                地址：四川轻化工大学 邮编：643000 电话：401-618-2605 传真：010-82023989 邮箱: 20077267134@qq.com<br>
+                所有版权归属xiaoxia
+            </div>
+        </div>
+    </footer>
+    <!-- 尾部区域end -->
+    <script>
+        var flag1 = false;
+        var flag2 = false;
+        var flag3 = false;
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        // 检查卡号
+        function checkId() {
+            $("error_name").innerText = "";
+            // 获取输入的卡号
+            var userName = $("uname").value;
+            // 判断用户名是否为空
+            if (userName == "" || userName == null) {
+                $("error_name").innerText = "*用户名为空！";
+                // 遇到错误就终止 返回
+                return;
+            }
+            // 判断用户名长度4~20
+            if (userName.length < 4 || userName.length > 20) {
+                $("error_name").innerText = "*用户名长度在4~20之间！";
+                return;
+            }
+            // 以英文字母开头，只能包含英文字母、数 字、下划线
+            var userMatch = /^[a-zA-Z][a-zA-Z0-9_]*$/;
+            if (!userName.match(userMatch)) {
+                $("error_name").innerText = "*用户名以英文字母开头，只能包含英文字母、数 字、下划线！";
+                return;
+            }
+            flag1 = true;
+
+        }
+
+        // 检查口令
+        function checkPWD() {
+            // 获取输入的口令
+            var userPwd = $("pwd").value;
+            $("error_pwd").innerText = "";
+            // 判断口令是否为空
+            if (userPwd == "" || userPwd == null) {
+                $("error_pwd").innerText = "*口令为空！";
+                return;
+            }
+            // 判断口令长度不能小于8或大于25
+            if (userPwd.length < 8 || userPwd.length > 25) {
+                $("error_pwd").innerText = "*口令长度不能小于8或大于25！";
+                return;
+            }
+            flag2 = true;
+        }
+
+        // 检查二次口令
+        function checkRPWD() {
+
+            // 获取输入的二次口令
+            var userRpwd = $("rpwd").value;
+            var userPwd = $("pwd").value;
+            $("error_rpwd").innerText = "";
+            // 判断口令是否为空
+            if (userRpwd == "" || userRpwd == null) {
+                $("error_rpwd").innerText = "*二次口令为空！";
+                return;
+            }
+            // 判断二次口令与口令相同
+            if (userRpwd != userPwd) {
+                $("error_rpwd").innerText = "*二次口令与口令不同！";
+                return;
+            }
+            flag3 = true;
+        }
+
+        // 认证按钮
+        function login() {
+            if (flag1 && flag2 && flag3) {
+                // 获取输入的卡号、口令
+                var userName = $("uname").value;
+                var userPwd = $("pwd").value;
+                // 判断卡号口令是否正确
+                if (userName == "suser" && userPwd == "12345678") {
+                    // 认证成功，跳转页面
+                    // window.location.href = "./success.html";
+                }
+                else {
+                    // 卡号、口令不正确
+                    alert("卡号、口令输入不正确！请重新输入！");
+
+                }
+            }
+            else {
+                // 否则，检查卡号或口令是否符合规定
+                alert("检查卡号或口令是否符合规定！");
+            }
+        }
+    </script>
+</body>
+
+</html>

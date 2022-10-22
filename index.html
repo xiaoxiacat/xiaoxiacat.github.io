@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海上月亮一只猫</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- 引入基础样式 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 引入轮播图样式 -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- 引入动画样式 -->
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <!-- 引入index样式 -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 头部区域start -->
+    <div class="header">
+        <div class="w">
+            <div class="fl">
+                <div class="title fl">
+                    海上月亮一只猫
+                </div>
+                <ul class="fl father">
+                    <li><a href="index.html" class="ico1">首页</a></li>
+                    <!-- <li><a href="message.html" class="ico2">留言</a></li> -->
+                    <li><a href="myslef.html" class="ico3">我的博客</a></li>
+                    <li><a href="information.html" class="ico4">关于我</a></li>
+                </ul>
+            </div>
+            <div class="fr">
+                <div class="search">
+                    <div class="logo">
+                        <a href="#"><img src="images/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="login">
+                    <a href="login.html">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 头部区域end -->
+
+    <!-- 主体区域start -->
+    <div class="main">
+        <!-- 轮播图 -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/3.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="images/2.jpg" alt=""></div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- 如果需要滚动条 -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <div class="typing">南风未起，念你成疾。</div>
+    </div>
+
+    <!-- 主体区域end -->
+
+
+
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper', {
+            direction: 'horizontal', // 水平切换选项
+            loop: true, // 循环模式选项
+            autoplay: true, // 自动切换
+            effect: 'fade',
+            keyboard: true, // 开启键盘来控制Swiper切换。
+
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'progressbar',
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+
+            },
+        })        
+    </script>
+</body>
+
+</html>
