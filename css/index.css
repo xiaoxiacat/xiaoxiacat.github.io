@@ -1,0 +1,42 @@
+.main {
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: 684px;
+}
+
+.swiper img {
+    width: 100%;
+    height: 100%;
+}
+
+.typing {
+    z-index: 1;
+    position: absolute;
+    left: 43%;
+    top: 50%;
+    width: 245px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+}
+
+/* 打字动画 */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+/* 光标动画 */
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
+}

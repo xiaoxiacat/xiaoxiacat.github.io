@@ -1,0 +1,86 @@
+/* 中心盒子 */
+.box {
+    width: 500px;
+    height: 350px;
+    border-radius: 5px;
+    background: #4B79A1;
+    color: #fff;
+    margin: 142px auto;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.login_title {
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 20px;
+}
+
+span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin: 15px;
+    margin-bottom: 0;
+}
+
+.user_name,
+.password,
+.rpasswprd {
+    margin-bottom: 10px;
+}
+
+#uname,
+#pwd,
+#rpwd {
+    width: 300px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn1:hover,
+.btn2:hover {
+    background: #86a8e7;
+}
+
+.btn1,
+.btn2 {
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 20px;
+    border: transparent;
+    font-weight: 700;
+    background: #283E51;
+    color: #fff;
+}
+
+.reg {
+    text-align: right;
+    margin-right: 50px;
+}
+
+.reg a {
+    color: #f05053;
+}
+
+.reg a:hover {
+    color: #a8c0ff;
+}
+
+/* 错误信息样式 */
+#error_name,
+#error_pwd,
+#error_rpwd {
+
+    font-size: 12px;
+    color: #f05053;
+    margin-left: 130px;
+    height: 10px;
+}

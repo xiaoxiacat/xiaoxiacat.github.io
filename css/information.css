@@ -1,0 +1,335 @@
+.banner {
+    /* height: 800px; */
+    padding-top: 40px;
+}
+
+.bh {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: pink; */
+    margin-bottom: 10px;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+.bh ul {
+    display: flex;
+    font-size: 14px;
+}
+
+.bh ul li {
+    padding-left: 40px;
+
+}
+
+.bh ul li a {
+    color: #fff;
+}
+
+.bh ul a.on,
+.bh ul a:hover {
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+}
+
+/* 轮播图 */
+.swiper {
+    width: 1200px;
+    height: 400px;
+}
+
+.swiper img {
+    width: 1200px;
+    height: 400px;
+}
+
+
+.bd {
+    padding: 20px 0;
+}
+
+/* 个人介绍 */
+.personal-main,
+.hometown-main,
+.school-main {
+    display: flex;
+}
+
+.personal-tit,
+.hometown-tit,
+.school-tit,
+.imgs-tit {
+    line-height: 50px;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    color: #fff;
+}
+
+.personal-main,
+.hometown-main,
+.school-main,
+.imgs-main {
+    color: #fff;
+}
+
+.personal-main .fl {
+    margin-right: 60px;
+}
+
+.bd .fl .img {
+    border-radius: 50%;
+}
+
+.personal-main .fr {
+    position: relative;
+}
+
+.personal-main .fr .myinfo {
+    color: #fff;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+
+/* 今天吃什么 */
+.eat {
+    position: absolute;
+    left: 238px;
+    top: 23px;
+    width: 300px;
+    /* border: 1px solid red; */
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.eat h1 {
+    font-size: 15px;
+}
+
+#but {
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 35px;
+    background: #fff;
+    margin-top: 20px;
+    color: #333;
+}
+
+#but:active {
+    opacity: 0, 3;
+}
+
+/* 我的家乡 */
+.hometown-main .fr {
+    width: 900px;
+    margin-left: 60px;
+}
+
+/* 我的学校 */
+.school-main .fl {
+    margin-right: 60px;
+}
+
+/* 我的相册 */
+.grid-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    /* 行间距，列间距 */
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.grid-item:nth-child(4) {
+    width: 380px;
+    grid-row: 2/4;
+    grid-column: 1/2;
+}
+
+.grid-item:nth-child(7) {
+    grid-row: 3/4;
+    grid-column: 2/4;
+}
+
+.grid-container .grid-item:hover {
+    border-bottom: 4px solid #fff;
+    transform: translateY(-8px);
+}
+
+/* 播放器 */
+.song {
+    position: relative;
+    top: -95px;
+    left: 615px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#myAudio {
+    display: none;
+}
+
+.player {
+    position: relative;
+}
+
+.control {
+    width: 300px;
+    height: 80px;
+    background: #fff;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 20px 20px 5px rgba(255, 255, 255, 0.2);
+}
+
+.alarm {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #000;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+.alarm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    border-radius: 50%;
+    background: url(../images/song.jpg) no-repeat center center;
+    background-size: 100%;
+}
+
+/* 音响 */
+.control.active .alarm::before {
+    animation: rotateF 3s infinite linear;
+}
+
+@keyframes rotateF {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.alarm::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.buts {
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    padding: 0 15px;
+}
+
+.prev,
+.play,
+.next {
+    width: 55px;
+    height: auto;
+    border-radius: 10px;
+    background: #000;
+    cursor: pointer;
+}
+
+.prev:hover,
+.play:hover,
+.next:hover {
+    background-color: #eee;
+}
+
+.prev {
+    background: url(../images/pre.png) no-repeat center center;
+    background-size: 40px;
+}
+
+.play {
+    background: url(../images/player.png) no-repeat center center;
+    background-size: 40px;
+}
+
+.next {
+    background: url(../images/after.png) no-repeat center center;
+    background-size: 40px;
+}
+
+/* 播放时 */
+.control.active .play {
+    background: url(../images/player2.png) no-repeat center center;
+    background-size: 40px;
+}
+
+.info {
+    opacity: 0;
+    position: absolute;
+    height: 78px;
+    top: -67px;
+    left: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 5px 15px 5px 110px;
+    border-radius: 15px;
+}
+
+.info.active {
+    opacity: 1;
+}
+
+.song-name {
+    color: #222;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.singer {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    height: 2px;
+    width: 100%;
+    background: #333;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bar {
+    background: red;
+    width: 10%;
+    height: 2px;
+}
